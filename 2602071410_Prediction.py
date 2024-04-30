@@ -24,7 +24,6 @@ def main():
     EstimatedSalary = st.number_input("Estimated Salary: ", 0, 10000000)
     CreditScore = st.number_input("Credit Score: ", 0, 1000)
 
-    # Encode Geography
     geography_encoding = {'France': [0, 0, 1], 'Spain': [0, 1, 0], 'Germany': [1, 0, 0]}
     geography_encoded = geography_encoding[Geography]
 
@@ -47,7 +46,6 @@ def main():
     
     scaler = StandardScaler()
 
-    # Scale only specific columns
     df[['CreditScore', 'Age', 'Balance', 'EstimatedSalary']] = scaler.fit_transform(df[['CreditScore', 'Age', 'Balance', 'EstimatedSalary']])
 
     df = df.replace(gender_encoder)
